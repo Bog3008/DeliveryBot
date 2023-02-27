@@ -1,0 +1,15 @@
+@startuml
+order_execution-> VideoCapturer: create_stream
+order_execution-> VideoCapturer: get_frame
+VideoCapturer-> order_execution: return frame
+
+
+order_execution-> IRecognizer: create object with frame
+order_execution-> IRecognizer: get_robot_coordinates
+IRecognizer-> order_execution: return robot coordinates
+
+order_execution-> IRecognizer: get_destination_coordinates
+IRecognizer-> order_execution: return destination coordinates
+
+order_execution-> IRobot: move from robot coordinates to destination
+@enduml
