@@ -1,3 +1,9 @@
 # ninja log v5
-0	545	6991287087036107	CMakeFiles/DeliveryBot.dir/DeliveryBotMain.cpp.obj	f27d58c58535605b
-547	718	6991287088744012	DeliveryBot.exe	f0399b614d7e5370
+2501	2814	6991880773320367	DeliveryBot.exe	d5d07e4e1e5f8d13
+3	1379	6991889520389658	CMakeFiles/DeliveryBot.dir/main.cpp.obj	f9e6121209a8fac6
+3	1814	6991921297384282	CMakeFiles/DeliveryBot.dir/main.cpp.obj	21b54b8ec0c5788d
+1816	2153	6991921300474987	DeliveryBot.exe	556bfb1683db21c0
+1	1550	6991924034692228	CMakeFiles/DeliveryBot.dir/main.cpp.obj	21b54b8ec0c5788d
+1554	1800	6991924036604607	DeliveryBot.exe	556bfb1683db21c0
+0	2204	6991930556500174	CMakeFiles/DeliveryBot.dir/main.cpp.obj	21b54b8ec0c5788d
+2211	2548	6991930559330532	DeliveryBot.exe	556bfb1683db21c0
