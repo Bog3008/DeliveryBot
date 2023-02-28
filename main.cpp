@@ -24,7 +24,13 @@ int main()
     cv::createTrackbar("Max Val", MASK_WINDOW, &maxVal, 255);
 
     //// 2. Capture from default camera
-    cv::VideoCapture videoCapture("E:\\Clion Projects\\DeliveryBot\\video_test_example\\test1.mp4");
+    cv::VideoCapture videoCapture(0);
+    // C:\Users\floma\CLionProjects\DeliveryBot\video_test_example\test1.mp4
+    if(!videoCapture.isOpened()){
+        std::cout << "Error opening video stream or file" << std::endl;
+        return -1;
+    }
+
 
     while (true) {
         //// 3. Capture and convert video to HSV color space
@@ -48,6 +54,10 @@ int main()
         cv::bitwise_and(inputVideo, inputVideo, resultVideo, mask);
 
         //// 5. Show videos
+        //RESIZE NOCOMMIT
+        resize(inputVideo, inputVideo, cv::Size_(inputVideo.cols/2, inputVideo.rows/2)); // to half size or even smaller
+        namedWindow( "Display frame",cv::WINDOW_AUTOSIZE);
+        //^^^
         cv::imshow("Input Video", inputVideo);
         cv::imshow("Result (Masked) Video", resultVideo);
         // cv::imshow("Mask", mask);
