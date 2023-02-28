@@ -84,6 +84,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/floma/CLionProjects/DeliveryBot/Point.h">
+			<Option target="DeliveryBot"/>
+		</Unit>
 		<Unit filename="C:/Users/floma/CLionProjects/DeliveryBot/main.cpp">
 			<Option target="DeliveryBot"/>
 		</Unit>

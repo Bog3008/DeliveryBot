@@ -2,7 +2,6 @@
 -- OpenCV ARCH: x64
 -- OpenCV RUNTIME: vc16
 -- OpenCV STATIC: OFF
--- Found OpenCV: D:/tools/opencv/build (found version "4.7.0") 
 -- Found OpenCV 4.7.0 in D:/tools/opencv/build/x64/vc16/lib
 -- You might need to add D:\tools\opencv\build\x64\vc16\bin to your PATH to be able to run your applications.
 -- Configuring done
