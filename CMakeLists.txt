@@ -6,9 +6,9 @@ set(CMAKE_CXX_STANDARD 23)
 
 if(IS_DIRECTORY("E:\\Programs\\OpenCV\\opencv\\build"))
     set(ENV{OPENCV_DIR} "E:\\Programs\\OpenCV\\opencv\\build")
-endif()
+elseif(IS_DIRECTORY("D:\\tools\\opencv\\build"))
     set(ENV{OPENCV_DIR} "D:\\tools\\opencv\\build")
-
+endif()
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 
 find_package(OpenCV REQUIRED)

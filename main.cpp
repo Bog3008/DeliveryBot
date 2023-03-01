@@ -4,16 +4,16 @@
 
 
 
-int main()
-{
+int main() {
+
     //// 1. Create mask control window with default HSV range to detect blue color
     auto const MASK_WINDOW = "Mask Settings";
     cv::namedWindow(MASK_WINDOW, cv::WINDOW_AUTOSIZE);
 
     // HSV range to detect blue color
-    int minHue = 320/2, maxHue = 350/2;
+    int minHue = 320 / 2, maxHue = 350 / 2;
     int minSat = 74, maxSat = 255;
-    int minVal =  0, maxVal = 255;
+    int minVal = 0, maxVal = 255;
 
     // Create trackbars in mask settings window
     cv::createTrackbar("Min Hue", MASK_WINDOW, &minHue, 360);
@@ -24,47 +24,59 @@ int main()
     cv::createTrackbar("Max Val", MASK_WINDOW, &maxVal, 255);
 
     //// 2. Capture from default camera
-    cv::VideoCapture videoCapture("C:\\Users\\floma\\CLionProjects\\DeliveryBot\\video_test_example\\test1.mp4");
+    cv::VideoCapture cap("E:\\Clion Projects\\DeliveryBot\\video_test_example\\test1ShortVer.mp4");
+    // E:\Clion Projects\DeliveryBot\video_test_example\test1.mp4
     // C:\Users\floma\CLionProjects\DeliveryBot\video_test_example\test1.mp4
-    if(!videoCapture.isOpened()){
+    if (!cap.isOpened()) {
         std::cout << "Error opening video stream or file" << std::endl;
         return -1;
     }
 
 
-    while (true) {
+    while (1) {
         //// 3. Capture and convert video to HSV color space
-        cv::Mat inputVideo;
-        videoCapture.read(inputVideo);
-        cv::flip(inputVideo, inputVideo, 1);
-        cv::Mat inputVideoHSV;
-        cv::cvtColor(inputVideo, inputVideoHSV, cv::COLOR_BGR2HSV);
+        cv::Mat inputVideoFrame;
+        //cap.read(inputVideoFrame);
+        cap >> inputVideoFrame;
+        if (inputVideoFrame.empty()) {
+            std::cout << "end of file";
+            break;
+        }
+
+        cv::flip(inputVideoFrame, inputVideoFrame, 1);
+        cv::Mat inputVideoFrameHSV;
+        cv::cvtColor(inputVideoFrame, inputVideoFrameHSV, cv::COLOR_BGR2HSV);
 
         //// 4. Create mask and result (masked) video
         cv::Mat mask;
         // params: input array, lower boundary array, upper boundary array, output array
         cv::inRange(
-                inputVideoHSV,
+                inputVideoFrameHSV,
                 cv::Scalar(minHue, minSat, minVal),
                 cv::Scalar(maxHue, maxSat, maxVal),
                 mask
         );
-        cv::Mat resultVideo;
+        cv::Mat resultVideoFrame;
         // params: src1	array, src2 array, output array, mask
-        cv::bitwise_and(inputVideo, inputVideo, resultVideo, mask);
+        cv::bitwise_and(inputVideoFrame, inputVideoFrame, resultVideoFrame, mask);
 
         //// 5. Show videos
-        //RESIZE NOCOMMIT
-        resize(inputVideo, inputVideo, cv::Size_(inputVideo.cols/2, inputVideo.rows/2));
-        resize(resultVideo, resultVideo, cv::Size_(resultVideo.cols/2, resultVideo.rows/2));// to half size or even smaller
+        resize(inputVideoFrame, inputVideoFrame, cv::Size_(inputVideoFrame.cols / 2, inputVideoFrame.rows / 2));
+        resize(resultVideoFrame, resultVideoFrame,
+               cv::Size_(resultVideoFrame.cols / 2, resultVideoFrame.rows / 2));// to half size or even smaller
         //namedWindow( "Display frame",cv::WINDOW_AUTOSIZE);
-        //^^^
+
         cv::imshow("Mask", mask);
-        cv::imshow("Input Video", inputVideo);
-        cv::imshow("Result (Masked) Video", resultVideo);
+        cv::imshow("Input Video", inputVideoFrame);
+        cv::imshow("Result (Masked) Video", resultVideoFrame);
         // cv::imshow("Mask", mask);
 
         //// Wait for 'esc' (27) key press for 30ms. If pressed, end program.
-        if (cv::waitKey(30) == 27) break;
+        if (cv::waitKey(30) == 27)
+            break;
     }
+    cap.release();
+
+    // Closes all the frames
+    cv::destroyAllWindows();
 }
