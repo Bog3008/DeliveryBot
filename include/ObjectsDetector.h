@@ -6,7 +6,7 @@
 #include "HSVColor.h"
 
 struct IObjectsDetector{
-    virtual Point get_robot_point() const = 0;
+    virtual Point get_angle_between() const = 0;
     virtual Point get_destination_point() const = 0;
     virtual ~IObjectsDetector(){}
 };
@@ -18,8 +18,10 @@ public:
     ObjectsDetector() = delete;
     ObjectsDetector(cv::Mat&);
 
-    Point get_robot_point() const override;
+    Point get_angle_between() const override;
     Point get_destination_point() const override;
+
+
     void fill_mask_of_HSV_color(cv::Mat&, cv::Mat&, HSVColor&, HSVColor&);
     cv:: Point get_centoid(cv::Mat&);
 

@@ -14,7 +14,7 @@ int main() {
 
 
     //// 2. Capture from default camera
-    cv::VideoCapture cap("E:\\Clion Projects\\DeliveryBot\\video_test_example\\test1ShortVer.mp4");
+    cv::VideoCapture cap("E:\\Clion Projects\\DeliveryBot\\video_test_example\\destin.mp4");
     // E:\Clion Projects\DeliveryBot\video_test_example\test1.mp4
     // C:\Users\floma\CLionProjects\DeliveryBot\video_test_example\test1.mp4
     // E:\Clion Projects\DeliveryBot\video_test_example\test1ShortVer.mp4
@@ -31,10 +31,10 @@ int main() {
         //cap.read(inputVideoFrame);
         cap >> inputVideoFrame;
         if (inputVideoFrame.empty()) {
-            std::cout << "end of file";
+            std::cout << "end of file\n";
             break;
         }
-        cv::flip(inputVideoFrame, inputVideoFrame, 1);
+
         ObjectsDetector OD{inputVideoFrame};
 
         //// Wait for 'esc' (27) key press for 30ms. If pressed, end program.
