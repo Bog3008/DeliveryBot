@@ -4,6 +4,7 @@
 #include "ObjectsDetector.h"
 #include "Point.h"
 #include "HSVColor.h"
+#include <math.h>
 int main() {
     //// 1. Create mask control window with default HSV range to detect blue color
 
@@ -26,6 +27,7 @@ int main() {
 
 
     while (1) {
+        int frame_skiper = 0;
         //// 3. Capture and convert video to HSV color space
         cv::Mat inputVideoFrame;
         //cap.read(inputVideoFrame);
@@ -34,8 +36,11 @@ int main() {
             std::cout << "end of file\n";
             break;
         }
-
-        ObjectsDetector OD{inputVideoFrame};
+        if(frame_skiper % 1200 == 0){
+            ObjectsDetector OD{inputVideoFrame};
+            frame_skiper = 0;
+        }
+        frame_skiper++;
 
         //// Wait for 'esc' (27) key press for 30ms. If pressed, end program.
         if (cv::waitKey(30) == 27)

@@ -6,11 +6,15 @@
 #include "opencv2/opencv.hpp"
 #include "Point.h"
 #include "HSVColor.h"
-Point ObjectsDetector::get_angle_between() const {
-    return robot;
+#include <math.h>
+using std::cout;
+using std::endl;
+
+double ObjectsDetector::get_angle_in_degrees() const {
+    return angle_in_dergees;
 }
-Point ObjectsDetector::get_destination_point() const {
-    return destination;
+double ObjectsDetector::get_destination_point() const {
+    return distance_in_meters;
 }
 
 
@@ -63,6 +67,10 @@ ObjectsDetector::ObjectsDetector( cv::Mat& inputVideoFrame) {
     cv::line(inputVideoFrame, destination_center, middle_of_robot_line, cv::Scalar(100, 200, 255), 5, cv::LINE_4);
     cv::line(inputVideoFrame, red_center, blue_center, cv::Scalar(0,250,200), 5, cv::LINE_4);
 
+    angle_in_dergees = angle_between_three_points(red_center, middle_of_robot_line, destination_center);
+
+    std::cout <<"angle_in_dergees is: " << angle_in_dergees << "\n";
+
     cv::imshow("Input", inputVideoFrame);
     cv::imshow("Mask", mask_red + mask_blue + mask_des);
     //cv::waitKey();
@@ -99,6 +107,25 @@ cv::Point ObjectsDetector::get_centoid(cv::Mat& src){
     circle(src, p, 5, cv::Scalar(128,0,0), -1);
     //cv::imshow("Image with center",src);
     return p;
+}
+
+double ObjectsDetector::angle_between_three_points(cv::Point robot, cv::Point mid, cv::Point destin){
+    cv::Point robot_vec = get_vec_by_two_points(mid, robot);
+    cv::Point destin_vec = get_vec_by_two_points(mid, destin);
+
+    //angle_in_dergees = (a * b) / (/a/*/b/)
+    double numerator = (robot_vec.x * destin_vec.x) + (robot_vec.y * destin_vec.y);
+    long double denumerator = modulus_of_vec(robot_vec) * modulus_of_vec(destin_vec);
+
+    double angle_in_di = acos(numerator/denumerator);
+    return (angle_in_di*180)/3.14;
+}
+cv::Point ObjectsDetector::get_vec_by_two_points(cv::Point lhs, cv::Point rhs){
+    // AB = (x2 - x1; y2-y1)
+    return {rhs.x - lhs.x, rhs.y - lhs.y};
+}
+double ObjectsDetector::modulus_of_vec(cv::Point vec){
+    return sqrt((vec.x * vec.x) + (vec.y * vec.y));
 }
 
 void test_centroid(cv::Mat src){
