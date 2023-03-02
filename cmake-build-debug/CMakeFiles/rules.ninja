@@ -20,7 +20,7 @@ msvc_deps_prefix = Примечание: включение файла:
 #############################################
 # Rule for compiling CXX files.
 
-rule CXX_COMPILER__DeliveryBot_Debug
+rule CXX_COMPILER__DeliveryBotBinary_Debug
   deps = msvc
   command = E:\Programs\MS_VS\VC\Tools\MSVC\14.35.32215\bin\Hostx64\x64\cl.exe  /nologo /TP $DEFINES $INCLUDES $FLAGS /showIncludes /Fo$out /Fd$TARGET_COMPILE_PDB /FS -c $in
   description = Building CXX object $out
@@ -29,7 +29,7 @@ rule CXX_COMPILER__DeliveryBot_Debug
 #############################################
 # Rule for linking CXX executable.
 
-rule CXX_EXECUTABLE_LINKER__DeliveryBot_Debug
+rule CXX_EXECUTABLE_LINKER__DeliveryBotBinary_Debug
   command = cmd.exe /C "$PRE_LINK && "E:\Programs\CLion 2022.2.4\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=$OBJECT_DIR --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100220~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100220~1.0\x64\mt.exe --manifests $MANIFESTS -- E:\Programs\MS_VS\VC\Tools\MSVC\14.35.32215\bin\Hostx64\x64\link.exe /nologo $in  /out:$TARGET_FILE /implib:$TARGET_IMPLIB /pdb:$TARGET_PDB /version:0.0 $LINK_FLAGS $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT

@@ -41,41 +41,49 @@ include CMakeFiles\rules.ninja
 
 cmake_ninja_workdir = E$:\Clion$ Projects\DeliveryBot\cmake-build-debug\
 # =============================================================================
-# Object build statements for EXECUTABLE target DeliveryBot
+# Object build statements for EXECUTABLE target DeliveryBotBinary
 
 
 #############################################
-# Order-only phony target for DeliveryBot
+# Order-only phony target for DeliveryBotBinary
 
-build cmake_object_order_depends_target_DeliveryBot: phony || CMakeFiles\DeliveryBot.dir
+build cmake_object_order_depends_target_DeliveryBotBinary: phony || CMakeFiles\DeliveryBotBinary.dir
 
-build CMakeFiles\DeliveryBot.dir\main.cpp.obj: CXX_COMPILER__DeliveryBot_Debug E$:\Clion$ Projects\DeliveryBot\main.cpp || cmake_object_order_depends_target_DeliveryBot
+build CMakeFiles\DeliveryBotBinary.dir\main.cpp.obj: CXX_COMPILER__DeliveryBotBinary_Debug E$:\Clion$ Projects\DeliveryBot\main.cpp || cmake_object_order_depends_target_DeliveryBotBinary
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd -std:c++latest
-  INCLUDES = -external:IE:\Programs\OpenCV\opencv\build\include -external:W0
-  OBJECT_DIR = CMakeFiles\DeliveryBot.dir
-  OBJECT_FILE_DIR = CMakeFiles\DeliveryBot.dir
-  TARGET_COMPILE_PDB = CMakeFiles\DeliveryBot.dir\
-  TARGET_PDB = DeliveryBot.pdb
+  INCLUDES = -I"E:\Clion Projects\DeliveryBot\include" -external:IE:\Programs\OpenCV\opencv\build\include -external:W0
+  OBJECT_DIR = CMakeFiles\DeliveryBotBinary.dir
+  OBJECT_FILE_DIR = CMakeFiles\DeliveryBotBinary.dir
+  TARGET_COMPILE_PDB = CMakeFiles\DeliveryBotBinary.dir\
+  TARGET_PDB = DeliveryBotBinary.pdb
+
+build CMakeFiles\DeliveryBotBinary.dir\src\ObjectsDetector.cpp.obj: CXX_COMPILER__DeliveryBotBinary_Debug E$:\Clion$ Projects\DeliveryBot\src\ObjectsDetector.cpp || cmake_object_order_depends_target_DeliveryBotBinary
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd -std:c++latest
+  INCLUDES = -I"E:\Clion Projects\DeliveryBot\include" -external:IE:\Programs\OpenCV\opencv\build\include -external:W0
+  OBJECT_DIR = CMakeFiles\DeliveryBotBinary.dir
+  OBJECT_FILE_DIR = CMakeFiles\DeliveryBotBinary.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\DeliveryBotBinary.dir\
+  TARGET_PDB = DeliveryBotBinary.pdb
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target DeliveryBot
+# Link build statements for EXECUTABLE target DeliveryBotBinary
 
 
 #############################################
-# Link the executable DeliveryBot.exe
+# Link the executable DeliveryBotBinary.exe
 
-build DeliveryBot.exe: CXX_EXECUTABLE_LINKER__DeliveryBot_Debug CMakeFiles\DeliveryBot.dir\main.cpp.obj | E$:\Programs\OpenCV\opencv\build\x64\vc16\lib\opencv_world470d.lib E$:\Programs\OpenCV\opencv\build\x64\vc16\lib\opencv_world470d.lib E$:\Programs\OpenCV\opencv\build\x64\vc16\lib\opencv_world470d.lib E$:\Programs\OpenCV\opencv\build\x64\vc16\lib\opencv_world470d.lib
+build DeliveryBotBinary.exe: CXX_EXECUTABLE_LINKER__DeliveryBotBinary_Debug CMakeFiles\DeliveryBotBinary.dir\main.cpp.obj CMakeFiles\DeliveryBotBinary.dir\src\ObjectsDetector.cpp.obj | E$:\Programs\OpenCV\opencv\build\x64\vc16\lib\opencv_world470d.lib E$:\Programs\OpenCV\opencv\build\x64\vc16\lib\opencv_world470d.lib E$:\Programs\OpenCV\opencv\build\x64\vc16\lib\opencv_world470d.lib E$:\Programs\OpenCV\opencv\build\x64\vc16\lib\opencv_world470d.lib
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = E:\Programs\OpenCV\opencv\build\x64\vc16\lib\opencv_world470d.lib  E:\Programs\OpenCV\opencv\build\x64\vc16\lib\opencv_world470d.lib  E:\Programs\OpenCV\opencv\build\x64\vc16\lib\opencv_world470d.lib  E:\Programs\OpenCV\opencv\build\x64\vc16\lib\opencv_world470d.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
-  OBJECT_DIR = CMakeFiles\DeliveryBot.dir
+  OBJECT_DIR = CMakeFiles\DeliveryBotBinary.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = CMakeFiles\DeliveryBot.dir\
-  TARGET_FILE = DeliveryBot.exe
-  TARGET_IMPLIB = DeliveryBot.lib
-  TARGET_PDB = DeliveryBot.pdb
+  TARGET_COMPILE_PDB = CMakeFiles\DeliveryBotBinary.dir\
+  TARGET_FILE = DeliveryBotBinary.exe
+  TARGET_IMPLIB = DeliveryBotBinary.lib
+  TARGET_PDB = DeliveryBotBinary.pdb
 
 
 #############################################
@@ -103,7 +111,7 @@ build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build DeliveryBot: phony DeliveryBot.exe
+build DeliveryBotBinary: phony DeliveryBotBinary.exe
 
 # =============================================================================
 # Folder targets.
@@ -113,7 +121,7 @@ build DeliveryBot: phony DeliveryBot.exe
 #############################################
 # Folder: E:/Clion Projects/DeliveryBot/cmake-build-debug
 
-build all: phony DeliveryBot.exe
+build all: phony DeliveryBotBinary.exe
 
 # =============================================================================
 # Built-in targets

@@ -1,11 +1,10 @@
 
 #include "opencv2/opencv.hpp"
 #include <iostream>
-
-
-
+#include "ObjectsDetector.h"
+#include "Point.h"
+#include "HSVColor.h"
 int main() {
-
     //// 1. Create mask control window with default HSV range to detect blue color
     auto const MASK_WINDOW = "Mask Settings";
     cv::namedWindow(MASK_WINDOW, cv::WINDOW_AUTOSIZE);
@@ -42,34 +41,7 @@ int main() {
             std::cout << "end of file";
             break;
         }
-
-        cv::flip(inputVideoFrame, inputVideoFrame, 1);
-        cv::Mat inputVideoFrameHSV;
-        cv::cvtColor(inputVideoFrame, inputVideoFrameHSV, cv::COLOR_BGR2HSV);
-
-        //// 4. Create mask and result (masked) video
-        cv::Mat mask;
-        // params: input array, lower boundary array, upper boundary array, output array
-        cv::inRange(
-                inputVideoFrameHSV,
-                cv::Scalar(minHue, minSat, minVal),
-                cv::Scalar(maxHue, maxSat, maxVal),
-                mask
-        );
-        cv::Mat resultVideoFrame;
-        // params: src1	array, src2 array, output array, mask
-        cv::bitwise_and(inputVideoFrame, inputVideoFrame, resultVideoFrame, mask);
-
-        //// 5. Show videos
-        resize(inputVideoFrame, inputVideoFrame, cv::Size_(inputVideoFrame.cols / 2, inputVideoFrame.rows / 2));
-        resize(resultVideoFrame, resultVideoFrame,
-               cv::Size_(resultVideoFrame.cols / 2, resultVideoFrame.rows / 2));// to half size or even smaller
-        //namedWindow( "Display frame",cv::WINDOW_AUTOSIZE);
-
-        cv::imshow("Mask", mask);
-        cv::imshow("Input Video", inputVideoFrame);
-        cv::imshow("Result (Masked) Video", resultVideoFrame);
-        // cv::imshow("Mask", mask);
+        ObjectsDetector OD{inputVideoFrame};
 
         //// Wait for 'esc' (27) key press for 30ms. If pressed, end program.
         if (cv::waitKey(30) == 27)
