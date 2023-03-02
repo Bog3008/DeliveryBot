@@ -20,7 +20,11 @@ public:
 
     Point get_robot_point() const override;
     Point get_destination_point() const override;
-    cv::Mat&& get_mask_of_HSV_color( cv::Mat&, HSVColor&, HSVColor&) ;
+    void fill_mask_of_HSV_color(cv::Mat&, cv::Mat&, HSVColor&, HSVColor&);
+    cv:: Point get_centoid(cv::Mat&);
 
     ~ObjectsDetector() = default;
+
 };
+void test_centroid(cv::Mat src);
+void test2_centroid(cv::Mat src);
