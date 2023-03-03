@@ -37,6 +37,7 @@ int main() {
             break;
         }
         if(frame_skiper % 1200 == 0){
+            cv::flip(inputVideoFrame, inputVideoFrame, 1);
             ObjectsDetector OD{inputVideoFrame};
             frame_skiper = 0;
         }

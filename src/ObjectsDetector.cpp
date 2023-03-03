@@ -4,17 +4,16 @@
 #pragma once
 #include "ObjectsDetector.h"
 #include "opencv2/opencv.hpp"
-#include "Point.h"
 #include "HSVColor.h"
-#include <math.h>
+#include <cmath>
 using std::cout;
 using std::endl;
 
-double ObjectsDetector::get_angle_in_degrees() const {
+double ObjectsDetector::get_angle_in_degrees() const noexcept{
     return angle_in_dergees;
 }
-double ObjectsDetector::get_destination_point() const {
-    return distance_in_meters;
+double ObjectsDetector::get_distance_in_cm() const noexcept{
+    return distance_in_cm;
 }
 
 
@@ -41,35 +40,36 @@ ObjectsDetector::ObjectsDetector( cv::Mat& inputVideoFrame) {
     fill_mask_of_HSV_color(inputVideoFrame, mask_des, min_hsv_threshold_green, max_hsv_threshold_green);
 
 
-    //test_centroid(mask_red);  finding ctnet but in simple shapes
-    //test2_centroid(mask_red); finding blobs
 
     cv::Point red_center = get_centoid(mask_red);
     cv::Point blue_center = get_centoid(mask_blue);
+
+    cv::Point& top_of_robot = red_center; // allias to comfortable chancge the direction of robot
+
+
     cv::Point destination_center = get_centoid(mask_des);
     cv::Point middle_of_robot_line = { (red_center.x + blue_center.x)/2,
                                        (red_center.y + blue_center.y)/2};
-    /*
-    std::cout << "\n\nAAA\n\n" <<"";
-    std::cout << mask_red.rows <<" "<< mask_red.cols <<"\n" << red_center.x <<" " << red_center.y <<"\n";
-    std::cout << mask_blue.rows <<" "<< mask_blue.cols <<"\n" << blue_center.x <<" " << blue_center.y <<"\n";
-    */
+
     if(red_center.x < 0 && red_center.y < 0 &&
        blue_center.x < 0 && blue_center.y < 0 &&
        destination_center.x < 0 && destination_center.y < 0){
         std::cout <<"\n ROBOT IS OUT OF FIELD OF VIEW\n";
-
         return;
     }
 
-    //double distance_between = abs(cv::norm(red_center-blue_center));
 
     cv::line(inputVideoFrame, destination_center, middle_of_robot_line, cv::Scalar(100, 200, 255), 5, cv::LINE_4);
     cv::line(inputVideoFrame, red_center, blue_center, cv::Scalar(0,250,200), 5, cv::LINE_4);
 
-    angle_in_dergees = angle_between_three_points(red_center, middle_of_robot_line, destination_center);
+    angle_in_dergees = angle_between_three_points(top_of_robot, middle_of_robot_line, destination_center);
 
-    std::cout <<"angle_in_dergees is: " << angle_in_dergees << "\n";
+    double distance_between_robot_top_and_destination = distance_between_two_points(top_of_robot, destination_center);
+    double size_of_robot = distance_between_two_points(top_of_robot, middle_of_robot_line) * 2;
+    distance_in_cm = (distance_between_robot_top_and_destination / size_of_robot) * 20; // i supose the size of robot is 20cm
+
+    std::cout <<"angle in dergees is: " << angle_in_dergees << "\n";
+    cout << "distance: " << distance_in_cm <<endl;
 
     cv::imshow("Input", inputVideoFrame);
     cv::imshow("Mask", mask_red + mask_blue + mask_des);
@@ -115,7 +115,7 @@ double ObjectsDetector::angle_between_three_points(cv::Point robot, cv::Point mi
 
     //angle_in_dergees = (a * b) / (/a/*/b/)
     double numerator = (robot_vec.x * destin_vec.x) + (robot_vec.y * destin_vec.y);
-    long double denumerator = modulus_of_vec(robot_vec) * modulus_of_vec(destin_vec);
+    double denumerator = modulus_of_vec(robot_vec) * modulus_of_vec(destin_vec);
 
     double angle_in_di = acos(numerator/denumerator);
     return (angle_in_di*180)/3.14;
@@ -128,7 +128,11 @@ double ObjectsDetector::modulus_of_vec(cv::Point vec){
     return sqrt((vec.x * vec.x) + (vec.y * vec.y));
 }
 
-void test_centroid(cv::Mat src){
+double ObjectsDetector::distance_between_two_points(cv::Point a, cv::Point b){
+    return sqrt(pow((a.x-b.x), 2) + pow((a.y-b.y), 2));
+}
+
+void test_centroid(cv::Mat& src){
     cv::Mat canny_output;
     std::vector<std::vector<cv::Point> > contours;
     std::vector<cv::Vec4i> hierarchy;
@@ -163,7 +167,7 @@ void test_centroid(cv::Mat src){
     cv::imshow( "Contours", drawing );
     cv::waitKey(0);
 }
-void test2_centroid(cv::Mat im) {
+void test2_centroid(cv::Mat& im) {
     // Setup SimpleBlobDetector parameters.
     cv::SimpleBlobDetector::Params params;
 

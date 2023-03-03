@@ -6,26 +6,27 @@
 #include "HSVColor.h"
 struct IObjectsDetector{
     virtual double get_angle_in_degrees() const = 0;
-    virtual double get_destination_point() const = 0;
+    virtual double get_distance_in_cm() const = 0;
     virtual ~IObjectsDetector(){}
 };
 
 struct ObjectsDetector: public IObjectsDetector{
 private:
-    double angle_in_dergees, distance_in_meters;
+    double angle_in_dergees, distance_in_cm;
 public:
     ObjectsDetector() = delete;
-    ObjectsDetector(cv::Mat&);
+    explicit ObjectsDetector(cv::Mat&);
 
-    double get_angle_in_degrees() const override;
-    double get_destination_point() const override;
+    double get_angle_in_degrees() const noexcept override;
+    double get_distance_in_cm() const noexcept override;
 
-    double angle_between_three_points(cv::Point, cv::Point, cv::Point);
-    cv::Point get_vec_by_two_points(cv::Point, cv::Point);
-    double modulus_of_vec(cv::Point);
+    static double angle_between_three_points(cv::Point, cv::Point, cv::Point);
+    static cv::Point get_vec_by_two_points(cv::Point, cv::Point);
+    static double modulus_of_vec(cv::Point);
+    static double distance_between_two_points(cv::Point, cv::Point);
 
-    void fill_mask_of_HSV_color(cv::Mat&, cv::Mat&, HSVColor&, HSVColor&);
-    cv:: Point get_centoid(cv::Mat&);
+    static void fill_mask_of_HSV_color(cv::Mat&, cv::Mat&, HSVColor&, HSVColor&);
+    static cv:: Point get_centoid(cv::Mat&);
 
     ~ObjectsDetector() = default;
 
