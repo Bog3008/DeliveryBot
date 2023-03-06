@@ -1,9 +1,30 @@
 //
 // Created by Bogdan on 06.03.2023.
 //
+#pragma once
+#include <iostream>
+#include <cmath>
+#include "HSVColor.h"
+#include "Point.h"
+#include "opencv2/opencv.hpp"
+#include "ObjectsDetector.hpp"
+#include "Robot.hpp"
 
-#include "Robot.h"
-#include "ObjectsDetector.h"
+RobotTest::RobotTest(const char *path): cap(path){
+    if (!cap.isOpened()) {
+        std::cout << "Error opening video stream or file" << std::endl;
+        throw std::runtime_error("Robot videoCapture cant open the video stream");
+    }
+}
+RobotTest::RobotTest(int path): cap(path){
+    if (!cap.isOpened()) {
+        std::cout << "Error opening video stream or file" << std::endl;
+        throw std::runtime_error("Robot videoCapture cant open the video stream");
+    }
+}
+RobotTest::~RobotTest(){
+    cap.release();
+}
 
 void RobotTest::turn_left(int degrees) {
         std::cout <<"turn left on "<< degrees <<std::endl;
@@ -14,9 +35,10 @@ void RobotTest::turn_right(int degrees){
 void RobotTest::move_forward(int meters){
         std::cout <<"move forward on "<< meters <<std::endl;
 }
+
 void RobotTest::run() {
     while(true){
-        if(!order_queue.empty() || true){
+        if(true){ //add queue
             do_clean();
         }
     }
@@ -30,7 +52,7 @@ void RobotTest::do_clean(){
             all_complete *= 0;
         }
         if (need_to_move() && all_complete) {
-            move();
+            move_ahead();
             all_complete *= 0;
         }
         if(all_complete)
@@ -74,7 +96,7 @@ void RobotTest::turn(){
         turn_left(angle_after);
     }
 }
-void RobotTest::move(){
+void RobotTest::move_ahead(){
     cv::Mat frame = get_frame();
     int distance = ObjectsDetector(frame).get_distance_in_cm();
     move_forward(distance);

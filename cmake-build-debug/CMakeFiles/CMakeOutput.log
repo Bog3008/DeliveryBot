@@ -50,18 +50,18 @@ The CXX compiler identification is MSVC, found in "E:/Clion Projects/DeliveryBot
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: E:/Clion Projects/DeliveryBot/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):E:/Programs/CLion 2022.2.4/bin/ninja/win/ninja.exe cmTC_d758f && [1/2] Building C object CMakeFiles\cmTC_d758f.dir\CMakeCCompilerABI.c.obj
+Run Build Command(s):E:/Programs/CLion 2022.2.4/bin/ninja/win/ninja.exe cmTC_98ac8 && [1/2] Building C object CMakeFiles\cmTC_98ac8.dir\CMakeCCompilerABI.c.obj
 Примечание: включение файла:  E:\Programs\CLion 2022.2.4\bin\cmake\win\share\cmake-3.23\Modules\CMakeCompilerABI.h
-[2/2] Linking C executable cmTC_d758f.exe
+[2/2] Linking C executable cmTC_98ac8.exe
 
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: E:/Clion Projects/DeliveryBot/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):E:/Programs/CLion 2022.2.4/bin/ninja/win/ninja.exe cmTC_56c8a && [1/2] Building CXX object CMakeFiles\cmTC_56c8a.dir\CMakeCXXCompilerABI.cpp.obj
+Run Build Command(s):E:/Programs/CLion 2022.2.4/bin/ninja/win/ninja.exe cmTC_f6275 && [1/2] Building CXX object CMakeFiles\cmTC_f6275.dir\CMakeCXXCompilerABI.cpp.obj
 Примечание: включение файла:  E:\Programs\CLion 2022.2.4\bin\cmake\win\share\cmake-3.23\Modules\CMakeCompilerABI.h
-[2/2] Linking CXX executable cmTC_56c8a.exe
+[2/2] Linking CXX executable cmTC_f6275.exe
 
 
 

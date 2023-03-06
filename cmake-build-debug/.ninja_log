@@ -1,9 +1,8 @@
 # ninja log v5
-3344	3698	6998236380997465	DeliveryBotBinary.exe	e5f0b6e0f1c6b80f
-5	3279	6994443396163624	CMakeFiles/DeliveryBot.dir/main.cpp.obj	1998a6114025319
-2	3278	6994443396163624	CMakeFiles/DeliveryBot.dir/ObjectsDetector.cpp.obj	4232ed1557233969
-0	2796	6997989197341930	CMakeFiles/DeliveryBotBinary.dir/main.cpp.obj	92da93fb2509413b
-0	3334	6998236378765483	CMakeFiles/DeliveryBotBinary.dir/src/ObjectsDetector.cpp.obj	e80197a821e98e65
-0	106	6994464370037790	build.ninja	59f1c10f89f7dca0
-0	3048	6998240722130873	CMakeFiles/DeliveryBotBinary.dir/src/ObjectsDetector.cpp.obj	e80197a821e98e65
-3051	3374	6998240724326502	DeliveryBotBinary.exe	e5f0b6e0f1c6b80f
+3058	3444	6998262954476378	DeliveryBotBinary.exe	5ae1f3960dcd3d1f
+6	3654	6998289386047448	CMakeFiles/DeliveryBotBinary.dir/main.cpp.obj	92da93fb2509413b
+0	3680	6998289386317511	CMakeFiles/DeliveryBotBinary.dir/src/ObjectsDetector.cpp.obj	e80197a821e98e65
+0	2663	6998292191808459	CMakeFiles/DeliveryBotBinary.dir/src/Robot.cpp.obj	965c74a259cd5d44
+1	186	6998292969743608	build.ninja	59f1c10f89f7dca0
+0	3978	6998298472594780	CMakeFiles/DeliveryBotBinary.dir/main.cpp.obj	92da93fb2509413b
+1	2738	6998298956824604	CMakeFiles/DeliveryBotBinary.dir/main.cpp.obj	92da93fb2509413b

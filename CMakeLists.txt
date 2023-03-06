@@ -15,6 +15,11 @@ find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
 set(OpenCV_LIBS opencv_core opencv_imgproc opencv_highgui opencv_imgcodecs)
 
-add_executable(DeliveryBotBinary main.cpp ${CMAKE_CURRENT_SOURCE_DIR}/src/ObjectsDetector.cpp)
-target_link_libraries(DeliveryBotBinary ${OpenCV_LIBS})
+add_executable(DeliveryBotBinary
+        main.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/ObjectsDetector.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/Robot.cpp
+        )
+
 target_include_directories(DeliveryBotBinary PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_link_libraries(DeliveryBotBinary ${OpenCV_LIBS})

@@ -2,7 +2,7 @@
 // Created by Bogdan on 27.02.2023.
 //
 #pragma once
-#include "ObjectsDetector.h"
+#include "ObjectsDetector.hpp"
 #include "opencv2/opencv.hpp"
 #include "HSVColor.h"
 #include <cmath>
