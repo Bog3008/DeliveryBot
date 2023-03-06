@@ -36,8 +36,8 @@ int main() {
             std::cout << "end of file\n";
             break;
         }
-        if(frame_skiper % 1200 == 0){
-            cv::flip(inputVideoFrame, inputVideoFrame, 1);
+        if(frame_skiper % 60 == 0){
+            //cv::flip(inputVideoFrame, inputVideoFrame, 1);
             ObjectsDetector OD{inputVideoFrame};
             frame_skiper = 0;
         }
