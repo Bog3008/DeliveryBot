@@ -15,7 +15,7 @@ struct IRobot{
     virtual void turn_left(int) = 0;
     virtual void turn_right(int ) = 0;
     virtual void move_forward(int ) = 0;
-    virtual ~IRobot() = 0;
+    virtual ~IRobot(){};
 };
 
 

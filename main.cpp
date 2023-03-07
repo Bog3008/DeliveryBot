@@ -14,5 +14,5 @@ int main() {
     // C:\Users\floma\CLionProjects\DeliveryBot\video_test_example\test1.mp4
     // E:\Clion Projects\DeliveryBot\video_test_example\test1ShortVer.mp4
     //E:\Clion Projects\DeliveryBot\video_test_example\testPic.jpg
-    RobotTest delbot("E:\\Clion Projects\\DeliveryBot\\video_test_example\\destin.mp4");
+    RobotTest delbot(0);
 }

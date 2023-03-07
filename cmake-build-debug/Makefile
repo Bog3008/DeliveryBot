@@ -106,24 +106,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named DeliveryBot
+# Target rules for targets named DeliveryBotBinary
 
 # Build rule for target.
-DeliveryBot: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) DeliveryBot
-.PHONY : DeliveryBot
+DeliveryBotBinary: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) DeliveryBotBinary
+.PHONY : DeliveryBotBinary
 
 # fast build rule for target.
-DeliveryBot\fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DeliveryBot.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\DeliveryBot.dir\build
-.PHONY : DeliveryBot\fast
+DeliveryBotBinary\fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DeliveryBotBinary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\DeliveryBotBinary.dir\build
+.PHONY : DeliveryBotBinary\fast
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DeliveryBot.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\DeliveryBot.dir\main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DeliveryBotBinary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\DeliveryBotBinary.dir\main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -131,7 +131,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DeliveryBot.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\DeliveryBot.dir\main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DeliveryBotBinary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\DeliveryBotBinary.dir\main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -139,8 +139,56 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DeliveryBot.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\DeliveryBot.dir\main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DeliveryBotBinary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\DeliveryBotBinary.dir\main.cpp.s
 .PHONY : main.cpp.s
+
+src\ObjectsDetector.obj: src\ObjectsDetector.cpp.obj
+.PHONY : src\ObjectsDetector.obj
+
+# target to build an object file
+src\ObjectsDetector.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DeliveryBotBinary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\DeliveryBotBinary.dir\src\ObjectsDetector.cpp.obj
+.PHONY : src\ObjectsDetector.cpp.obj
+
+src\ObjectsDetector.i: src\ObjectsDetector.cpp.i
+.PHONY : src\ObjectsDetector.i
+
+# target to preprocess a source file
+src\ObjectsDetector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DeliveryBotBinary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\DeliveryBotBinary.dir\src\ObjectsDetector.cpp.i
+.PHONY : src\ObjectsDetector.cpp.i
+
+src\ObjectsDetector.s: src\ObjectsDetector.cpp.s
+.PHONY : src\ObjectsDetector.s
+
+# target to generate assembly for a file
+src\ObjectsDetector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DeliveryBotBinary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\DeliveryBotBinary.dir\src\ObjectsDetector.cpp.s
+.PHONY : src\ObjectsDetector.cpp.s
+
+src\Robot.obj: src\Robot.cpp.obj
+.PHONY : src\Robot.obj
+
+# target to build an object file
+src\Robot.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DeliveryBotBinary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\DeliveryBotBinary.dir\src\Robot.cpp.obj
+.PHONY : src\Robot.cpp.obj
+
+src\Robot.i: src\Robot.cpp.i
+.PHONY : src\Robot.i
+
+# target to preprocess a source file
+src\Robot.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DeliveryBotBinary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\DeliveryBotBinary.dir\src\Robot.cpp.i
+.PHONY : src\Robot.cpp.i
+
+src\Robot.s: src\Robot.cpp.s
+.PHONY : src\Robot.s
+
+# target to generate assembly for a file
+src\Robot.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DeliveryBotBinary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\DeliveryBotBinary.dir\src\Robot.cpp.s
+.PHONY : src\Robot.cpp.s
 
 # Help Target
 help:
@@ -150,10 +198,16 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... DeliveryBot
+	@echo ... DeliveryBotBinary
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... src/ObjectsDetector.obj
+	@echo ... src/ObjectsDetector.i
+	@echo ... src/ObjectsDetector.s
+	@echo ... src/Robot.obj
+	@echo ... src/Robot.i
+	@echo ... src/Robot.s
 .PHONY : help
 
 
