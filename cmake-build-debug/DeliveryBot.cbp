@@ -86,6 +86,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/floma/CLionProjects/DeliveryBot/include/OrderQueue.hpp">
+			<Option target="DeliveryBotBinary"/>
+		</Unit>
 		<Unit filename="C:/Users/floma/CLionProjects/DeliveryBot/main.cpp">
 			<Option target="DeliveryBotBinary"/>
 		</Unit>

@@ -14,5 +14,11 @@ int main() {
     // C:\Users\floma\CLionProjects\DeliveryBot\video_test_example\test1.mp4
     // E:\Clion Projects\DeliveryBot\video_test_example\test1ShortVer.mp4
     //E:\Clion Projects\DeliveryBot\video_test_example\testPic.jpg
-    RobotTest delbot(0);
+    RobotTest delbot("C:\\Users\\floma\\CLionProjects\\DeliveryBot\\video_test_example\\destin.mp4");
+    try {
+        delbot.run();
+    }
+    catch(std::runtime_error e){
+        std::cout << e.what();
+    }
 }

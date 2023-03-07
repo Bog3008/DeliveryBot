@@ -1,0 +1,8 @@
+//
+// Created by floma on 07.03.2023.
+//
+
+#ifndef DELIVERYBOT_ORDERQUEUE_HPP
+#define DELIVERYBOT_ORDERQUEUE_HPP
+
+#endif //DELIVERYBOT_ORDERQUEUE_HPP

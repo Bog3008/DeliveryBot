@@ -8,6 +8,7 @@
 #include "Point.h"
 #include "opencv2/opencv.hpp"
 #include "ObjectsDetector.hpp"
+#include <list>
 
 
 struct IRobot{
@@ -24,7 +25,7 @@ struct RobotTest: public IRobot{
 
     RobotTest(const char *);
     RobotTest(int);
-    cv::Mat && get_frame();
+    cv::Mat get_frame();
 
     void run() override final;
     void turn_left(int degrees) override final;

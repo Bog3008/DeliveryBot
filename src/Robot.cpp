@@ -9,6 +9,8 @@
 #include "opencv2/opencv.hpp"
 #include "ObjectsDetector.hpp"
 #include "Robot.hpp"
+#include <list>
+
 
 RobotTest::RobotTest(const char *path): cap(path){
     if (!cap.isOpened()) {
@@ -37,14 +39,19 @@ void RobotTest::move_forward(int meters){
 }
 
 void RobotTest::run() {
+    std::cout << "run"<<std::endl;
+    std::list<int> order_queue;
+    order_queue.push_back(10);
     while(true){
-        if(true){ //add queue
+        if(!order_queue.empty()){ //add queue
             do_clean();
+            order_queue.pop_back();
         }
     }
 }
 
 void RobotTest::do_clean(){
+    std::cout << "do_clean"<<std::endl;
     while(true) {
         bool all_complete = 1;
         if (need_to_turn()) {
@@ -61,6 +68,7 @@ void RobotTest::do_clean(){
 }
 
 bool RobotTest::need_to_turn(){
+    std::cout << "need_to_turn"<<std::endl;
     cv::Mat frame = get_frame();
     int current_angle = ObjectsDetector(frame).get_angle_in_degrees();
     if(current_angle > 20)
@@ -68,6 +76,7 @@ bool RobotTest::need_to_turn(){
     return false;
 }
 bool RobotTest::need_to_move(){
+    std::cout << "need_to_move"<<std::endl;
     cv::Mat frame = get_frame();
     int current_distance = ObjectsDetector(frame).get_distance_in_cm();
     if(current_distance > 30)
@@ -75,16 +84,18 @@ bool RobotTest::need_to_move(){
     return false;
 }
 
-cv::Mat && RobotTest::get_frame(){
+cv::Mat RobotTest::get_frame(){
+    std::cout << "get frame"<<std::endl;
     cv::Mat frame;
     cap >> frame;
     if(frame.empty()){
         throw std::runtime_error("Robot got empty frame, may be video stream is closed of end of file");
     }
-    return std::move(frame);
+    return frame;
 }
 
 void RobotTest::turn(){
+    std::cout << "turn"<<std::endl;
     cv::Mat frame = get_frame();
     int angle_before  = ObjectsDetector(frame).get_angle_in_degrees();
     turn_right(angle_before);
@@ -97,6 +108,7 @@ void RobotTest::turn(){
     }
 }
 void RobotTest::move_ahead(){
+    std::cout << "move_ahead"<<std::endl;
     cv::Mat frame = get_frame();
     int distance = ObjectsDetector(frame).get_distance_in_cm();
     move_forward(distance);
