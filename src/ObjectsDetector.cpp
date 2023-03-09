@@ -40,8 +40,8 @@ ObjectsDetector::ObjectsDetector( cv::Mat& inputVideoFrame) {
     fill_mask_of_HSV_color(inputVideoFrame, mask_des, min_hsv_threshold_green, max_hsv_threshold_green);
 
 
-
-    cv::Point red_center = get_centoid(mask_red);
+    cv::Point red_center = BrSp(mask_red);
+    //cv::Point red_center = get_centoid(mask_red);
     cv::Point blue_center = get_centoid(mask_blue);
 
     cv::Point& top_of_robot = red_center; // allias to comfortable chancge the direction of robot
@@ -70,7 +70,7 @@ ObjectsDetector::ObjectsDetector( cv::Mat& inputVideoFrame) {
 
     std::cout <<"angle in dergees is: " << angle_in_dergees << "\n";
     cout << "distance: " << distance_in_cm <<endl;
-
+    //cv::circle(inputVideoFrame, maxLoc, 100, cv::Scalar(0, 0, 255), 5);
     cv::imshow("Input", inputVideoFrame);
     cv::imshow("Mask", mask_red + mask_blue + mask_des);
     //cv::waitKey();
@@ -132,6 +132,22 @@ double ObjectsDetector::distance_between_two_points(cv::Point a, cv::Point b){
     return sqrt(pow((a.x-b.x), 2) + pow((a.y-b.y), 2));
 }
 
+cv::Point BrSp(cv::Mat src){
+    // Convert the image to grayscale
+    cv::Mat gray;
+    return cv::Point{0,0};
+    //cv::cvtColor(src, gray, cv::COLOR_BGR2GRAY);
+
+    // Find the brightest spot in the image
+    double maxVal;
+    cv::Point maxLoc;
+    cv::minMaxLoc(gray, NULL, &maxVal, NULL, &maxLoc);
+
+    // Display the brightest spot on the original image
+    //cv::circle(gray, maxLoc, 100, cv::Scalar(0, 0, 255), 5);
+    //cv::imshow("Brightest Spot", gray);
+    return maxLoc;
+}
 void test_centroid(cv::Mat& src){
     cv::Mat canny_output;
     std::vector<std::vector<cv::Point> > contours;

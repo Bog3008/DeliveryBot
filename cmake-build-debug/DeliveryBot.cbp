@@ -17,13 +17,14 @@
 					<DistClean command="nmake /NOLOGO /f C:\Users\floma\CLionProjects\DeliveryBot\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="DeliveryBot">
-				<Option output="C:/Users/floma/CLionProjects/DeliveryBot/cmake-build-debug/DeliveryBot.exe" prefix_auto="0" extension_auto="0"/>
+			<Target title="DeliveryBotBinary">
+				<Option output="C:/Users/floma/CLionProjects/DeliveryBot/cmake-build-debug/DeliveryBotBinary.exe" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/floma/CLionProjects/DeliveryBot/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="msvc8"/>
 				<Compiler>
+					<Add directory="C:/Users/floma/CLionProjects/DeliveryBot/include"/>
 					<Add directory="D:/tools/opencv/build/include"/>
 					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\ATLMFC\include"/>
 					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include"/>
@@ -34,19 +35,20 @@
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.19041.0\\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\Users\floma\CLionProjects\DeliveryBot\cmake-build-debug\Makefile VERBOSE=1 DeliveryBot"/>
+					<Build command="nmake /NOLOGO /f C:\Users\floma\CLionProjects\DeliveryBot\cmake-build-debug\Makefile VERBOSE=1 DeliveryBotBinary"/>
 					<CompileFile command="nmake /NOLOGO /f C:\Users\floma\CLionProjects\DeliveryBot\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="nmake /NOLOGO /f C:\Users\floma\CLionProjects\DeliveryBot\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 					<DistClean command="nmake /NOLOGO /f C:\Users\floma\CLionProjects\DeliveryBot\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="DeliveryBot/fast">
-				<Option output="C:/Users/floma/CLionProjects/DeliveryBot/cmake-build-debug/DeliveryBot.exe" prefix_auto="0" extension_auto="0"/>
+			<Target title="DeliveryBotBinary/fast">
+				<Option output="C:/Users/floma/CLionProjects/DeliveryBot/cmake-build-debug/DeliveryBotBinary.exe" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/floma/CLionProjects/DeliveryBot/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="msvc8"/>
 				<Compiler>
+					<Add directory="C:/Users/floma/CLionProjects/DeliveryBot/include"/>
 					<Add directory="D:/tools/opencv/build/include"/>
 					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\ATLMFC\include"/>
 					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include"/>
@@ -57,7 +59,7 @@
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.19041.0\\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\Users\floma\CLionProjects\DeliveryBot\cmake-build-debug\Makefile VERBOSE=1 DeliveryBot/fast"/>
+					<Build command="nmake /NOLOGO /f C:\Users\floma\CLionProjects\DeliveryBot\cmake-build-debug\Makefile VERBOSE=1 DeliveryBotBinary/fast"/>
 					<CompileFile command="nmake /NOLOGO /f C:\Users\floma\CLionProjects\DeliveryBot\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="nmake /NOLOGO /f C:\Users\floma\CLionProjects\DeliveryBot\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 					<DistClean command="nmake /NOLOGO /f C:\Users\floma\CLionProjects\DeliveryBot\cmake-build-debug\Makefile VERBOSE=1 clean"/>
@@ -84,23 +86,17 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/floma/CLionProjects/DeliveryBot/Point.h">
-			<Option target="DeliveryBot"/>
-		</Unit>
 		<Unit filename="C:/Users/floma/CLionProjects/DeliveryBot/main.cpp">
-			<Option target="DeliveryBot"/>
+			<Option target="DeliveryBotBinary"/>
 		</Unit>
-		<Unit filename="C:/Users/floma/CLionProjects/DeliveryBot/main.h">
-			<Option target="DeliveryBot"/>
+		<Unit filename="C:/Users/floma/CLionProjects/DeliveryBot/src/ObjectsDetector.cpp">
+			<Option target="DeliveryBotBinary"/>
 		</Unit>
 		<Unit filename="C:/Users/floma/CLionProjects/DeliveryBot/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="C:/Users/floma/CLionProjects/DeliveryBot/tools/opencv/build/OpenCVConfig-version.cmake">
-			<Option virtualFolder="CMake Files\tools\opencv\build\"/>
-		</Unit>
-		<Unit filename="C:/Users/floma/CLionProjects/DeliveryBot/tools/opencv/build/OpenCVConfig.cmake">
-			<Option virtualFolder="CMake Files\tools\opencv\build\"/>
+		<Unit filename="C:/Users/floma/CLionProjects/DeliveryBot/tools/opencv/build/x64/vc16/lib/OpenCVConfig-version.cmake">
+			<Option virtualFolder="CMake Files\tools\opencv\build\x64\vc16\lib\"/>
 		</Unit>
 		<Unit filename="C:/Users/floma/CLionProjects/DeliveryBot/tools/opencv/build/x64/vc16/lib/OpenCVConfig.cmake">
 			<Option virtualFolder="CMake Files\tools\opencv\build\x64\vc16\lib\"/>

@@ -31,5 +31,6 @@ public:
     ~ObjectsDetector() = default;
 
 };
+cv::Point BrSp(cv::Mat);
 void test_centroid(cv::Mat src);
 void test2_centroid(cv::Mat src);
