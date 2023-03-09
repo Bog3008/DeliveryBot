@@ -42,7 +42,8 @@ ObjectsDetector::ObjectsDetector( cv::Mat& inputVideoFrame) {
 
     cv::Point red_center = BrSp(mask_red);
     //cv::Point red_center = get_centoid(mask_red);
-    cv::Point blue_center = get_centoid(mask_blue);
+    //cv::Point blue_center = get_centoid(mask_blue);
+    cv::Point blue_center = BrSp(mask_blue);
 
     cv::Point& top_of_robot = red_center; // allias to comfortable chancge the direction of robot
 
@@ -73,7 +74,7 @@ ObjectsDetector::ObjectsDetector( cv::Mat& inputVideoFrame) {
     //cv::circle(inputVideoFrame, maxLoc, 100, cv::Scalar(0, 0, 255), 5);
     cv::imshow("Input", inputVideoFrame);
     cv::imshow("Mask", mask_red + mask_blue + mask_des);
-    //cv::waitKey();
+    cv::waitKey();
 
 }
 void ObjectsDetector::fill_mask_of_HSV_color(cv::Mat& inputVideoFrame, cv::Mat& mask, HSVColor& min_hsv, HSVColor& max_hsv){
@@ -160,7 +161,8 @@ cv::Point BrSp(cv::Mat src){
     cv::circle(image, center, 5, cv::Scalar(0, 0, 255), -1);
 
 // Display the result
-    cv::imshow("Result", image);
+    //cv::imshow("Result", image);
+    //cv::waitKey(0);
     return center;
 }
 void test_centroid(cv::Mat& src){
