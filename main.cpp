@@ -15,7 +15,7 @@ int main() {
 
 
     //// 2. Capture from default camera
-    cv::VideoCapture cap(0);
+    cv::VideoCapture cap("E:\\Clion Projects\\DeliveryBot\\video_test_example\\destin.mp4");
     // E:\Clion Projects\DeliveryBot\video_test_example\test1.mp4
     // C:\Users\floma\CLionProjects\DeliveryBot\video_test_example\test1.mp4
     // E:\Clion Projects\DeliveryBot\video_test_example\test1ShortVer.mp4

@@ -97,7 +97,7 @@ cv::Point ObjectsDetector::get_centoid(cv::Mat& src){
     cv::Mat thr;
 
 // convert grayscale to binary image
-    threshold( src, thr, 100,255,cv::THRESH_BINARY );
+    threshold( src, thr, 200,255,cv::THRESH_BINARY );
 
 // find moments of the image
     cv::Moments m = moments(thr,true);
@@ -134,19 +134,34 @@ double ObjectsDetector::distance_between_two_points(cv::Point a, cv::Point b){
 
 cv::Point BrSp(cv::Mat src){
     // Convert the image to grayscale
-    cv::Mat gray;
-    return cv::Point{0,0};
-    //cv::cvtColor(src, gray, cv::COLOR_BGR2GRAY);
+    cv::Mat image = src;
 
-    // Find the brightest spot in the image
-    double maxVal;
-    cv::Point maxLoc;
-    cv::minMaxLoc(gray, NULL, &maxVal, NULL, &maxLoc);
+    // Convert the image to grayscale
+    cv::Mat thresh = src;
+    std::vector<std::vector<cv::Point>> contours;
+    cv::findContours(thresh, contours, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
 
-    // Display the brightest spot on the original image
-    //cv::circle(gray, maxLoc, 100, cv::Scalar(0, 0, 255), 5);
-    //cv::imshow("Brightest Spot", gray);
-    return maxLoc;
+// Find the contour with the largest area
+    double max_area = 0;
+    int max_area_idx = -1;
+    for (int i = 0; i < contours.size(); i++) {
+        double area = cv::contourArea(contours[i]);
+        if (area > max_area) {
+            max_area = area;
+            max_area_idx = i;
+        }
+    }
+
+// Find the center of the contour
+    cv::Moments moments = cv::moments(contours[max_area_idx]);
+    cv::Point center(moments.m10 / moments.m00, moments.m01 / moments.m00);
+
+// Draw a circle at the center of the brightest spot
+    cv::circle(image, center, 5, cv::Scalar(0, 0, 255), -1);
+
+// Display the result
+    cv::imshow("Result", image);
+    return center;
 }
 void test_centroid(cv::Mat& src){
     cv::Mat canny_output;
