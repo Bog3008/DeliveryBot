@@ -68,11 +68,11 @@ ObjectsDetector::ObjectsDetector( cv::Mat& inputVideoFrame) {
     double size_of_robot = distance_between_two_points(top_of_robot, middle_of_robot_line) * 2;
     distance_in_cm = (distance_between_robot_top_and_destination / size_of_robot) * 20; // i supose the size of robot is 20cm
 
-    std::cout <<"angle in dergees is: " << angle_in_dergees << "\n";
-    cout << "distance: " << distance_in_cm <<endl;
+    //std::cout <<"angle in dergees is: " << angle_in_dergees << "\n";
+    //cout << "distance: " << distance_in_cm <<endl;
 
-    cv::imshow("Input", inputVideoFrame);
-    cv::imshow("Mask", mask_red + mask_blue + mask_des);
+    //cv::imshow("Input", inputVideoFrame);
+    //cv::imshow("Mask", mask_red + mask_blue + mask_des);
     //cv::waitKey();
 
 }

@@ -9,8 +9,7 @@
 #include "opencv2/opencv.hpp"
 #include "ObjectsDetector.hpp"
 #include "Robot.hpp"
-#include <list>
-
+#include "OrderQueue.hpp"
 
 RobotTest::RobotTest(const char *path): cap(path){
     if (!cap.isOpened()) {
@@ -40,12 +39,10 @@ void RobotTest::move_forward(int meters){
 
 void RobotTest::run() {
     std::cout << "run"<<std::endl;
-    std::list<int> order_queue;
-    order_queue.push_back(10);
     while(true){
-        if(!order_queue.empty()){ //add queue
+        if(!OrderQueue::empty()){
             do_clean();
-            order_queue.pop_back();
+            OrderQueue::pop();
         }
     }
 }
@@ -53,32 +50,31 @@ void RobotTest::run() {
 void RobotTest::do_clean(){
     std::cout << "do_clean"<<std::endl;
     while(true) {
-        bool all_complete = 1;
-        if (need_to_turn()) {
-            turn();
-            all_complete *= 0;
+        cv::Mat frame = get_frame();
+        ObjectsDetector obj_d(frame);
+        double angle  = obj_d.get_angle_in_degrees();
+        double dist = obj_d.get_distance_in_cm();
+
+        if (need_to_turn(angle)) {
+            turn(angle);
+            continue;
         }
-        if (need_to_move() && all_complete) {
-            move_ahead();
-            all_complete *= 0;
+        if (need_to_move(dist)) {
+            move_forward(dist);
+            continue;
         }
-        if(all_complete)
-            break;
+        break;
     }
 }
 
-bool RobotTest::need_to_turn(){
+bool RobotTest::need_to_turn(double current_angle){
     std::cout << "need_to_turn"<<std::endl;
-    cv::Mat frame = get_frame();
-    int current_angle = ObjectsDetector(frame).get_angle_in_degrees();
     if(current_angle > 20)
         return true;
     return false;
 }
-bool RobotTest::need_to_move(){
+bool RobotTest::need_to_move(double current_distance){
     std::cout << "need_to_move"<<std::endl;
-    cv::Mat frame = get_frame();
-    int current_distance = ObjectsDetector(frame).get_distance_in_cm();
     if(current_distance > 30)
         return true;
     return false;
@@ -94,13 +90,10 @@ cv::Mat RobotTest::get_frame(){
     return frame;
 }
 
-void RobotTest::turn(){
-    std::cout << "turn"<<std::endl;
-    cv::Mat frame = get_frame();
-    int angle_before  = ObjectsDetector(frame).get_angle_in_degrees();
+void RobotTest::turn(double angle_before){
     turn_right(angle_before);
 
-    frame = get_frame();
+    cv::Mat frame = get_frame();
     int angle_after = ObjectsDetector(frame).get_angle_in_degrees();
 
     if(angle_after > angle_before){

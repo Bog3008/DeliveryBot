@@ -32,12 +32,12 @@ struct RobotTest: public IRobot{
     void turn_right(int degrees) override final;
     void move_forward(int meters) override final;
 
-    void turn();
+    void turn(double);
     void move_ahead();
 
     void do_clean();
-    bool need_to_turn();
-    bool need_to_move();
+    bool need_to_turn(double);
+    bool need_to_move(double);
 
     ~RobotTest();
 };

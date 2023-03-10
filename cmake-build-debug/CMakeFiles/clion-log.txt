@@ -1,4 +1,4 @@
-"D:\Programs\CLion 2022.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" -S C:\Users\floma\CLionProjects\DeliveryBot -B C:\Users\floma\CLionProjects\DeliveryBot\cmake-build-debug
+"E:\Programs\CLion 2022.2.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=E:/Programs/CLion 2022.2.4/bin/ninja/win/ninja.exe" -G Ninja -S "E:\Clion Projects\DeliveryBot" -B "E:\Clion Projects\DeliveryBot\cmake-build-debug"
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/floma/CLionProjects/DeliveryBot/cmake-build-debug
+-- Build files have been written to: E:/Clion Projects/DeliveryBot/cmake-build-debug
