@@ -3,9 +3,6 @@
 //
 #pragma once
 #include <iostream>
-#include <cmath>
-#include "HSVColor.h"
-#include "Point.h"
 #include "opencv2/opencv.hpp"
 #include "ObjectsDetector.hpp"
 #include <list>

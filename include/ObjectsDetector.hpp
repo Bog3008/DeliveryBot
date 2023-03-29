@@ -2,7 +2,6 @@
 #pragma once
 
 #include "opencv2/opencv.hpp"
-#include "Point.h"
 #include "HSVColor.h"
 
 struct IObjectsDetector{

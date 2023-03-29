@@ -3,9 +3,6 @@
 //
 #pragma once
 #include <iostream>
-#include <cmath>
-#include "HSVColor.h"
-#include "Point.h"
 #include "opencv2/opencv.hpp"
 #include "ObjectsDetector.hpp"
 #include "Robot.hpp"
@@ -49,6 +46,7 @@ void RobotTest::run() {
 
 void RobotTest::do_clean(){
     std::cout << "do_clean"<<std::endl;
+
     while(true) {
         cv::Mat frame = get_frame();
         ObjectsDetector obj_d(frame);
