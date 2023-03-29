@@ -5,4 +5,19 @@
 #ifndef DELIVERYBOT_PUBLISHER_H
 #define DELIVERYBOT_PUBLISHER_H
 
+#include <mosquitto.h>
+#include<stdio.h>
+#include<string>
+#include<stdexcept>
+
+struct MPublisher{
+private:
+    struct mosquitto * mosq;
+public:
+    MPublisher(const char * host, int port);
+    ~MPublisher();
+    void publish(std::string);
+};
+
+
 #endif //DELIVERYBOT_PUBLISHER_H

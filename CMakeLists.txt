@@ -23,6 +23,7 @@ add_executable(DeliveryBotBinary
         ${CMAKE_CURRENT_SOURCE_DIR}/src/ObjectsDetector.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/OrderQueue.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/Robot.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/Publisher.cpp
         )
 
 target_include_directories(DeliveryBotBinary PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
