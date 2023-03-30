@@ -36,7 +36,11 @@ MPublisher::~MPublisher() {
 }
 
 void MPublisher::publish(std::string message){
+
     int return_code = mosquitto_publish(mosq, NULL, "test/t1", message.size()+1, message.data(), 0, false);
+    //mosquitto_loop(mosq, 1000, 1) ;
+    _sleep(1);
+    std::cout << "Publish in "<< message ;
     if(return_code != MOSQ_ERR_SUCCESS) {
         std::string error_message = "Publisher could not send a message: ";
         switch (return_code) {

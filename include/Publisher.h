@@ -9,7 +9,8 @@
 #include<stdio.h>
 #include<string>
 #include<stdexcept>
-
+#include<iostream>
+#include <stdlib.h>
 struct MPublisher{
 private:
     struct mosquitto * mosq;

@@ -30,13 +30,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 21,
+				"line" : 23,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 30,
+				"line" : 32,
 				"parent" : 0
 			},
 			{
@@ -52,9 +52,21 @@
 				"parent" : 0
 			},
 			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 20,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 21,
+				"parent" : 0
+			},
+			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 29,
+				"line" : 31,
 				"parent" : 0
 			},
 			{
@@ -81,18 +93,26 @@
 			[
 				{
 					"backtrace" : 3,
-					"path" : "E:/Clion Projects/DeliveryBot/mosquitto/include"
-				},
-				{
-					"backtrace" : 4,
 					"path" : "E:/Clion Projects/DeliveryBot/mosquitto"
 				},
 				{
+					"backtrace" : 4,
+					"path" : "E:/Clion Projects/DeliveryBot/mosquitto/include"
+				},
+				{
 					"backtrace" : 5,
-					"path" : "E:/Clion Projects/DeliveryBot/include"
+					"path" : "E:/Clion Projects/DeliveryBot/mosquitto/build"
 				},
 				{
 					"backtrace" : 6,
+					"path" : "E:/Clion Projects/DeliveryBot/mosquitto/build/lib/Debug"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "E:/Clion Projects/DeliveryBot/include"
+				},
+				{
+					"backtrace" : 8,
 					"isSystem" : true,
 					"path" : "E:/Programs/OpenCV/opencv/build/include"
 				}

@@ -51,7 +51,7 @@ build cmake_object_order_depends_target_DeliveryBotBinary: phony || CMakeFiles\D
 
 build CMakeFiles\DeliveryBotBinary.dir\main.cpp.obj: CXX_COMPILER__DeliveryBotBinary_Debug E$:\Clion$ Projects\DeliveryBot\main.cpp || cmake_object_order_depends_target_DeliveryBotBinary
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd -std:c++latest
-  INCLUDES = -I"E:\Clion Projects\DeliveryBot\mosquitto\include" -I"E:\Clion Projects\DeliveryBot\mosquitto" -I"E:\Clion Projects\DeliveryBot\include" -external:IE:\Programs\OpenCV\opencv\build\include -external:W0
+  INCLUDES = -I"E:\Clion Projects\DeliveryBot\mosquitto" -I"E:\Clion Projects\DeliveryBot\mosquitto\include" -I"E:\Clion Projects\DeliveryBot\mosquitto\build" -I"E:\Clion Projects\DeliveryBot\mosquitto\build\lib\Debug" -I"E:\Clion Projects\DeliveryBot\include" -external:IE:\Programs\OpenCV\opencv\build\include -external:W0
   OBJECT_DIR = CMakeFiles\DeliveryBotBinary.dir
   OBJECT_FILE_DIR = CMakeFiles\DeliveryBotBinary.dir
   TARGET_COMPILE_PDB = CMakeFiles\DeliveryBotBinary.dir\
@@ -59,7 +59,7 @@ build CMakeFiles\DeliveryBotBinary.dir\main.cpp.obj: CXX_COMPILER__DeliveryBotBi
 
 build CMakeFiles\DeliveryBotBinary.dir\src\ObjectsDetector.cpp.obj: CXX_COMPILER__DeliveryBotBinary_Debug E$:\Clion$ Projects\DeliveryBot\src\ObjectsDetector.cpp || cmake_object_order_depends_target_DeliveryBotBinary
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd -std:c++latest
-  INCLUDES = -I"E:\Clion Projects\DeliveryBot\mosquitto\include" -I"E:\Clion Projects\DeliveryBot\mosquitto" -I"E:\Clion Projects\DeliveryBot\include" -external:IE:\Programs\OpenCV\opencv\build\include -external:W0
+  INCLUDES = -I"E:\Clion Projects\DeliveryBot\mosquitto" -I"E:\Clion Projects\DeliveryBot\mosquitto\include" -I"E:\Clion Projects\DeliveryBot\mosquitto\build" -I"E:\Clion Projects\DeliveryBot\mosquitto\build\lib\Debug" -I"E:\Clion Projects\DeliveryBot\include" -external:IE:\Programs\OpenCV\opencv\build\include -external:W0
   OBJECT_DIR = CMakeFiles\DeliveryBotBinary.dir
   OBJECT_FILE_DIR = CMakeFiles\DeliveryBotBinary.dir\src
   TARGET_COMPILE_PDB = CMakeFiles\DeliveryBotBinary.dir\
@@ -67,7 +67,7 @@ build CMakeFiles\DeliveryBotBinary.dir\src\ObjectsDetector.cpp.obj: CXX_COMPILER
 
 build CMakeFiles\DeliveryBotBinary.dir\src\OrderQueue.cpp.obj: CXX_COMPILER__DeliveryBotBinary_Debug E$:\Clion$ Projects\DeliveryBot\src\OrderQueue.cpp || cmake_object_order_depends_target_DeliveryBotBinary
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd -std:c++latest
-  INCLUDES = -I"E:\Clion Projects\DeliveryBot\mosquitto\include" -I"E:\Clion Projects\DeliveryBot\mosquitto" -I"E:\Clion Projects\DeliveryBot\include" -external:IE:\Programs\OpenCV\opencv\build\include -external:W0
+  INCLUDES = -I"E:\Clion Projects\DeliveryBot\mosquitto" -I"E:\Clion Projects\DeliveryBot\mosquitto\include" -I"E:\Clion Projects\DeliveryBot\mosquitto\build" -I"E:\Clion Projects\DeliveryBot\mosquitto\build\lib\Debug" -I"E:\Clion Projects\DeliveryBot\include" -external:IE:\Programs\OpenCV\opencv\build\include -external:W0
   OBJECT_DIR = CMakeFiles\DeliveryBotBinary.dir
   OBJECT_FILE_DIR = CMakeFiles\DeliveryBotBinary.dir\src
   TARGET_COMPILE_PDB = CMakeFiles\DeliveryBotBinary.dir\
@@ -75,7 +75,7 @@ build CMakeFiles\DeliveryBotBinary.dir\src\OrderQueue.cpp.obj: CXX_COMPILER__Del
 
 build CMakeFiles\DeliveryBotBinary.dir\src\Robot.cpp.obj: CXX_COMPILER__DeliveryBotBinary_Debug E$:\Clion$ Projects\DeliveryBot\src\Robot.cpp || cmake_object_order_depends_target_DeliveryBotBinary
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd -std:c++latest
-  INCLUDES = -I"E:\Clion Projects\DeliveryBot\mosquitto\include" -I"E:\Clion Projects\DeliveryBot\mosquitto" -I"E:\Clion Projects\DeliveryBot\include" -external:IE:\Programs\OpenCV\opencv\build\include -external:W0
+  INCLUDES = -I"E:\Clion Projects\DeliveryBot\mosquitto" -I"E:\Clion Projects\DeliveryBot\mosquitto\include" -I"E:\Clion Projects\DeliveryBot\mosquitto\build" -I"E:\Clion Projects\DeliveryBot\mosquitto\build\lib\Debug" -I"E:\Clion Projects\DeliveryBot\include" -external:IE:\Programs\OpenCV\opencv\build\include -external:W0
   OBJECT_DIR = CMakeFiles\DeliveryBotBinary.dir
   OBJECT_FILE_DIR = CMakeFiles\DeliveryBotBinary.dir\src
   TARGET_COMPILE_PDB = CMakeFiles\DeliveryBotBinary.dir\
@@ -83,7 +83,7 @@ build CMakeFiles\DeliveryBotBinary.dir\src\Robot.cpp.obj: CXX_COMPILER__Delivery
 
 build CMakeFiles\DeliveryBotBinary.dir\src\Publisher.cpp.obj: CXX_COMPILER__DeliveryBotBinary_Debug E$:\Clion$ Projects\DeliveryBot\src\Publisher.cpp || cmake_object_order_depends_target_DeliveryBotBinary
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd -std:c++latest
-  INCLUDES = -I"E:\Clion Projects\DeliveryBot\mosquitto\include" -I"E:\Clion Projects\DeliveryBot\mosquitto" -I"E:\Clion Projects\DeliveryBot\include" -external:IE:\Programs\OpenCV\opencv\build\include -external:W0
+  INCLUDES = -I"E:\Clion Projects\DeliveryBot\mosquitto" -I"E:\Clion Projects\DeliveryBot\mosquitto\include" -I"E:\Clion Projects\DeliveryBot\mosquitto\build" -I"E:\Clion Projects\DeliveryBot\mosquitto\build\lib\Debug" -I"E:\Clion Projects\DeliveryBot\include" -external:IE:\Programs\OpenCV\opencv\build\include -external:W0
   OBJECT_DIR = CMakeFiles\DeliveryBotBinary.dir
   OBJECT_FILE_DIR = CMakeFiles\DeliveryBotBinary.dir\src
   TARGET_COMPILE_PDB = CMakeFiles\DeliveryBotBinary.dir\

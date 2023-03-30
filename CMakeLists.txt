@@ -15,8 +15,10 @@ find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
 set(OpenCV_LIBS opencv_core opencv_imgproc opencv_highgui opencv_imgcodecs)
 
-include_directories (${CMAKE_CURRENT_SOURCE_DIR}/mosquitto/include)
 include_directories (${CMAKE_CURRENT_SOURCE_DIR}/mosquitto)
+include_directories (${CMAKE_CURRENT_SOURCE_DIR}/mosquitto/include)
+include_directories (${CMAKE_CURRENT_SOURCE_DIR}/mosquitto/build)
+include_directories (${CMAKE_CURRENT_SOURCE_DIR}/mosquitto/build/lib/Debug)
 
 add_executable(DeliveryBotBinary
         main.cpp
