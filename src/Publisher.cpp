@@ -5,17 +5,19 @@
 #include "Publisher.h"
 
 
-MPublisher::MPublisher(const char *host, int port) {
+MPublisher::MPublisher(const std::string &host, int port) {
     auto neg = mosquitto_lib_init();
     if(neg == MOSQ_ERR_UNKNOWN){
+        mosquitto_lib_cleanup();
         throw std::runtime_error("Publisher could not connect to broker!: Sockets couldn’t be initialized.");
     }
     mosq = mosquitto_new("publisher", true, NULL);
 
     int return_code;
-    return_code = mosquitto_connect(mosq, host, port, 60);
-    if(return_code){
+    return_code = mosquitto_connect(mosq, host.c_str(), port, 60);
+    if(return_code != MOSQ_ERR_SUCCESS){
         mosquitto_destroy(mosq);
+        mosquitto_lib_cleanup();
 
         std::string error_message =  "Publisher could not connect to broker! ";
         switch(return_code) {
@@ -35,12 +37,12 @@ MPublisher::~MPublisher() {
     mosquitto_lib_cleanup();
 }
 
-void MPublisher::publish(std::string message){
+void MPublisher::publish(const std::string & topic, const std::string & message){
 
-    int return_code = mosquitto_publish(mosq, NULL, "test/t1", message.size()+1, message.data(), 0, false);
+    int return_code = mosquitto_publish(mosq, NULL, topic.c_str(), message.size()+1, message.c_str(), 0, false);
     //mosquitto_loop(mosq, 1000, 1) ;
     _sleep(1);
-    std::cout << "Publish in "<< message ;
+
     if(return_code != MOSQ_ERR_SUCCESS) {
         std::string error_message = "Publisher could not send a message: ";
         switch (return_code) {

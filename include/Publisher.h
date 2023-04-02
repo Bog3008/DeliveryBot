@@ -15,9 +15,9 @@ struct MPublisher{
 private:
     struct mosquitto * mosq;
 public:
-    MPublisher(const char * host, int port);
+    MPublisher(const std::string & host, int port);
     ~MPublisher();
-    void publish(std::string);
+    void publish(const std::string & topic, const std::string & message);
 };
 
 

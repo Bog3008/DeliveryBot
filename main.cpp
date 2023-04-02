@@ -6,23 +6,25 @@
 #include "OrderQueue.hpp"
 #include <stdio.h>
 #include <Publisher.h>
+#include "TgBot.h"
+
+//cd E:\Clion Projects\DelBotSub\mosquitto\build\client\Debug
 
 int main() {
 
-    // cv::VideoCapture cap("E:\\Clion Projects\\DeliveryBot\\video_test_example\\destin.mp4");
-    // E:\Clion Projects\DeliveryBot\video_test_example\test1.mp4
-    // C:\Users\floma\CLionProjects\DeliveryBot\video_test_example\test1.mp4
-    // E:\Clion Projects\DeliveryBot\video_test_example\test1ShortVer.mp4
-    //E:\Clion Projects\DeliveryBot\video_test_example\testPic.jpg
+    std::string topic = "test/t1";
+    std::string host = "localhost";
+    int port = 1883;
 
-    MPublisher Publisher("localhost", 1883);
-    Publisher.publish("Hell");
+    tg_bot_run();
+
+    MPublisher Publisher(host, port);
+    Publisher.publish(topic, "Hell");
     for(int i = 0; i < 5; i++)
-        Publisher.publish(std::to_string(i));
+        Publisher.publish(topic, std::to_string(i));
 
     /*
     OrderQueue::add(10);
-
     RobotTest delbot("E:\\Clion Projects\\DeliveryBot\\video_test_example\\destin.mp4");
     try {
         delbot.run();
