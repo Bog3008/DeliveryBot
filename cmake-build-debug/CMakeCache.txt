@@ -244,6 +244,21 @@ LIB_EAY_LIBRARY_RELEASE:FILEPATH=LIB_EAY_LIBRARY_RELEASE-NOTFOUND
 //Path to a library.
 LIB_EAY_RELEASE:FILEPATH=E:/Programs/OpenSSL-Win64/lib/VC/libcrypto64MD.lib
 
+//Path to a library.
+MOSQUITTOPP_LIBRARY_DEBUG:FILEPATH=C:/Users/Bogdan/.clion-vcpkg/vcpkg/installed/x64-windows/debug/lib/mosquittopp.lib
+
+//Path to a library.
+MOSQUITTOPP_LIBRARY_RELEASE:FILEPATH=C:/Users/Bogdan/.clion-vcpkg/vcpkg/installed/x64-windows/lib/mosquittopp.lib
+
+//Path to a file.
+MOSQUITTO_INCLUDE_DIR:PATH=C:/Users/Bogdan/.clion-vcpkg/vcpkg/installed/x64-windows/include
+
+//Path to a library.
+MOSQUITTO_LIBRARY_DEBUG:FILEPATH=C:/Users/Bogdan/.clion-vcpkg/vcpkg/installed/x64-windows/debug/lib/mosquitto.lib
+
+//Path to a library.
+MOSQUITTO_LIBRARY_RELEASE:FILEPATH=C:/Users/Bogdan/.clion-vcpkg/vcpkg/installed/x64-windows/lib/mosquitto.lib
+
 //Path to a file.
 OPENSSL_APPLINK_SOURCE:FILEPATH=E:/Programs/OpenSSL-Win64/include/openssl/applink.c
 
@@ -252,6 +267,12 @@ OPENSSL_INCLUDE_DIR:PATH=E:/Programs/OpenSSL-Win64/include
 
 //The directory containing a CMake configuration file for OpenCV.
 OpenCV_DIR:PATH=E:/Programs/OpenCV/opencv/build/x64/vc16/lib
+
+//Arguments to supply to pkg-config
+PKG_CONFIG_ARGN:STRING=
+
+//pkg-config executable
+PKG_CONFIG_EXECUTABLE:FILEPATH=PKG_CONFIG_EXECUTABLE-NOTFOUND
 
 //Path to a library.
 SSL_EAY_DEBUG:FILEPATH=E:/Programs/OpenSSL-Win64/lib/VC/libssl64MDd.lib
@@ -325,6 +346,9 @@ Z_VCPKG_PWSH_PATH:FILEPATH=Z_VCPKG_PWSH_PATH-NOTFOUND
 //The directory which contains the installed libraries for each
 // triplet
 _VCPKG_INSTALLED_DIR:PATH=C:/Users/Bogdan/.clion-vcpkg/vcpkg/installed
+
+//The directory containing a CMake configuration file for mosquitto.
+mosquitto_DIR:PATH=mosquitto_DIR-NOTFOUND
 
 
 ########################
@@ -503,8 +527,20 @@ FIND_PACKAGE_MESSAGE_DETAILS_ZLIB:INTERNAL=[optimized;C:/Users/Bogdan/.clion-vcp
 LIB_EAY_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: LIB_EAY_LIBRARY_RELEASE
 LIB_EAY_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: MOSQUITTOPP_LIBRARY_DEBUG
+MOSQUITTOPP_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: MOSQUITTOPP_LIBRARY_RELEASE
+MOSQUITTOPP_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: MOSQUITTO_LIBRARY_DEBUG
+MOSQUITTO_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: MOSQUITTO_LIBRARY_RELEASE
+MOSQUITTO_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OPENSSL_INCLUDE_DIR
 OPENSSL_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PKG_CONFIG_ARGN
+PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
+PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: SSL_EAY_LIBRARY_DEBUG
 SSL_EAY_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: SSL_EAY_LIBRARY_RELEASE

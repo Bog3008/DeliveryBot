@@ -11,17 +11,20 @@
 //cd E:\Clion Projects\DelBotSub\mosquitto\build\client\Debug
 
 int main() {
-
     std::string topic = "test/t1";
     std::string host = "localhost";
     int port = 1883;
 
-    tg_bot_run();
-
-    MPublisher Publisher(host, port);
-    Publisher.publish(topic, "Hell");
-    for(int i = 0; i < 5; i++)
-        Publisher.publish(topic, std::to_string(i));
+    //tg_bot_run();
+    try {
+        MPublisher Publisher(host, port);
+        Publisher.publish(topic, "Hell");
+        for (int i = 0; i < 5; i++)
+            Publisher.publish(topic, std::to_string(i));
+    }
+    catch (std::exception e){
+        std::cout << e.what();
+    }
 
     /*
     OrderQueue::add(10);

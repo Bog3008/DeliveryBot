@@ -42,16 +42,16 @@ void tg_bot_run(){
     bot.getEvents().onCallbackQuery([&bot, &keyboard, &host, &port, &topic](CallbackQuery::Ptr query) {
         if (StringTools::startsWith(query->data, "start bot")) {
             std::string response = "DelBot was started";
-            MPublisher Publisher(host, port);
-            Publisher.publish(topic, response);
+            //MPublisher Publisher(host, port);
+            //Publisher.publish(topic, response);
             bot.getApi().sendMessage(query->message->chat->id, response, false, 0, keyboard, "Markdown");
         }
     });
     bot.getEvents().onCallbackQuery([&bot, &keyboard, &host, &port, &topic](CallbackQuery::Ptr query) {
         if (StringTools::startsWith(query->data, "stop bot")) {
             std::string response = "DelBot was stopped";
-            MPublisher Publisher(host, port);
-            Publisher.publish(topic, response);
+            //MPublisher Publisher(host, port);
+            //Publisher.publish(topic, response);
             bot.getApi().sendMessage(query->message->chat->id, response, false, 0, keyboard, "Markdown");
         }
     });

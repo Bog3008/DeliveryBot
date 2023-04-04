@@ -13,4 +13,4 @@
 #include <tgbot/tgbot.h>
 
 using namespace TgBot;
-void tg_bot_run();
+void tg_bot_run(); 

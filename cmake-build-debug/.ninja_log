@@ -1,16 +1,11 @@
 # ninja log v5
-15	1158	7021401439239090	CMakeFiles/DeliveryBotBinary.dir/src/Publisher.cpp.obj	b2ce5213a2ad0260
-6240	7419	7021474347064479	DeliveryBotBinary.exe	c6ac3ae6b8b2da7f
-13	6232	7021474343653883	CMakeFiles/DeliveryBotBinary.dir/main.cpp.obj	eac655876c31125
-27	1157	7021401439229088	CMakeFiles/DeliveryBotBinary.dir/src/OrderQueue.cpp.obj	842abbe0ab027f8f
-21	3448	7021401462109428	CMakeFiles/DeliveryBotBinary.dir/src/Robot.cpp.obj	43d0b360cbd06468
-0	3454	7021401462189451	CMakeFiles/DeliveryBotBinary.dir/src/ObjectsDetector.cpp.obj	600d928b2443a970
-0	99	7021478171136749	build.ninja	59f1c10f89f7dca0
-66	7491	7021478432580007	CMakeFiles/DeliveryBotBinary.dir/src/TgBot.cpp.obj	cc8ebd1204e8bed1
-53	7771	7021478435380635	CMakeFiles/DeliveryBotBinary.dir/main.cpp.obj	eac655876c31125
-7781	9220	7021478440121710	DeliveryBotBinary.exe	a5bbd85c7150b8aa
-46	8195	7021480866300584	CMakeFiles/DeliveryBotBinary.dir/src/TgBot.cpp.obj	cc8ebd1204e8bed1
-35	8610	7021480870311493	CMakeFiles/DeliveryBotBinary.dir/main.cpp.obj	eac655876c31125
-8623	10239	7021480875442652	DeliveryBotBinary.exe	a5bbd85c7150b8aa
-14	6336	7021481986692080	CMakeFiles/DeliveryBotBinary.dir/src/TgBot.cpp.obj	cc8ebd1204e8bed1
-6347	7509	7021481989946939	DeliveryBotBinary.exe	a5bbd85c7150b8aa
+56	1521	7023363835732468	CMakeFiles/DeliveryBotBinary.dir/src/Publisher.cpp.obj	b2afed22f01489de
+17	1505	7023374585105345	DeliveryBotBinary.exe	c000b2f5246fb7f3
+25	8530	7023364543065155	CMakeFiles/DeliveryBotBinary.dir/main.cpp.obj	5e8cb7226dede5d
+69	1520	7023363835722480	CMakeFiles/DeliveryBotBinary.dir/src/OrderQueue.cpp.obj	81f415d1c78ee111
+63	5009	7023363870585611	CMakeFiles/DeliveryBotBinary.dir/src/Robot.cpp.obj	f6bcfdb5562a8ea9
+33	5022	7023363870725613	CMakeFiles/DeliveryBotBinary.dir/src/ObjectsDetector.cpp.obj	724b4e637fbc6cd8
+0	99	7023388675237722	build.ninja	59f1c10f89f7dca0
+75	9969	7023363919950549	CMakeFiles/DeliveryBotBinary.dir/src/TgBot.cpp.obj	427839700ab77548
+18	8259	7023389345383360	CMakeFiles/DeliveryBotBinary.dir/main.cpp.obj	5e8cb7226dede5d
+8268	10295	7023389349825053	DeliveryBotBinary.exe	c000b2f5246fb7f3
