@@ -15,6 +15,9 @@ int main() {
     std::string host = "localhost";
     int port = 1883;
 
+    //RobotTest a("E:\\Clion Projects\\DeliveryBot\\video_test_example\\rotate.mp4");
+    //OrderQueue::add(1);
+    //a.run();
     //tg_bot_run();
     try {
         MPublisher Publisher(host, port);

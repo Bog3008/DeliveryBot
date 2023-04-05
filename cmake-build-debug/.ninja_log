@@ -1,11 +1,22 @@
 # ninja log v5
 56	1521	7023363835732468	CMakeFiles/DeliveryBotBinary.dir/src/Publisher.cpp.obj	b2afed22f01489de
-17	1505	7023374585105345	DeliveryBotBinary.exe	c000b2f5246fb7f3
-25	8530	7023364543065155	CMakeFiles/DeliveryBotBinary.dir/main.cpp.obj	5e8cb7226dede5d
+8268	10295	7023389349825053	DeliveryBotBinary.exe	c000b2f5246fb7f3
+18	8259	7023389345383360	CMakeFiles/DeliveryBotBinary.dir/main.cpp.obj	5e8cb7226dede5d
 69	1520	7023363835722480	CMakeFiles/DeliveryBotBinary.dir/src/OrderQueue.cpp.obj	81f415d1c78ee111
 63	5009	7023363870585611	CMakeFiles/DeliveryBotBinary.dir/src/Robot.cpp.obj	f6bcfdb5562a8ea9
 33	5022	7023363870725613	CMakeFiles/DeliveryBotBinary.dir/src/ObjectsDetector.cpp.obj	724b4e637fbc6cd8
-0	99	7023388675237722	build.ninja	59f1c10f89f7dca0
+0	99	7023755256181112	build.ninja	59f1c10f89f7dca0
 75	9969	7023363919950549	CMakeFiles/DeliveryBotBinary.dir/src/TgBot.cpp.obj	427839700ab77548
-18	8259	7023389345383360	CMakeFiles/DeliveryBotBinary.dir/main.cpp.obj	5e8cb7226dede5d
-8268	10295	7023389349825053	DeliveryBotBinary.exe	c000b2f5246fb7f3
+25	1428	7023756766946055	CMakeFiles/DeliveryBotBinary.dir/src/OrderQueue.cpp.obj	81f415d1c78ee111
+19	1429	7023756766946055	CMakeFiles/DeliveryBotBinary.dir/src/Publisher.cpp.obj	b2afed22f01489de
+29	3826	7023756790916036	CMakeFiles/DeliveryBotBinary.dir/src/Robot.cpp.obj	f6bcfdb5562a8ea9
+1	3838	7023756790956035	CMakeFiles/DeliveryBotBinary.dir/src/ObjectsDetector.cpp.obj	724b4e637fbc6cd8
+33	7835	7023756830836061	CMakeFiles/DeliveryBotBinary.dir/src/TgBot.cpp.obj	427839700ab77548
+15	8323	7023756835676027	CMakeFiles/DeliveryBotBinary.dir/main.cpp.obj	5e8cb7226dede5d
+8342	10076	7023756841796038	DeliveryBotBinary.exe	c000b2f5246fb7f3
+46	4941	7023759007672528	CMakeFiles/DeliveryBotBinary.dir/src/Robot.cpp.obj	f6bcfdb5562a8ea9
+21	4954	7023759007792540	CMakeFiles/DeliveryBotBinary.dir/src/ObjectsDetector.cpp.obj	724b4e637fbc6cd8
+40	10044	7023759058381446	CMakeFiles/DeliveryBotBinary.dir/main.cpp.obj	5e8cb7226dede5d
+10074	12309	7023759068120543	DeliveryBotBinary.exe	c000b2f5246fb7f3
+14	7644	7023759865704718	CMakeFiles/DeliveryBotBinary.dir/main.cpp.obj	5e8cb7226dede5d
+7658	8655	7023759868598856	DeliveryBotBinary.exe	c000b2f5246fb7f3

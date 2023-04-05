@@ -2,8 +2,8 @@
 #pragma once
 
 #include "opencv2/opencv.hpp"
+//#include "Point.h"
 #include "HSVColor.h"
-
 struct IObjectsDetector{
     virtual double get_angle_in_degrees() const = 0;
     virtual double get_distance_in_cm() const = 0;
@@ -30,6 +30,8 @@ public:
 
     ~ObjectsDetector() = default;
 
+
 };
+cv::Point color_center(cv::Mat);
 void test_centroid(cv::Mat src);
 void test2_centroid(cv::Mat src);
