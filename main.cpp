@@ -7,36 +7,29 @@
 #include <stdio.h>
 #include <Publisher.h>
 #include "TgBot.h"
-
+#include "Data.h"
 //cd E:\Clion Projects\DelBotSub\mosquitto\build\client\Debug
 
+void controller_start(){
+    try {
+        std::string tg_responce = tg_bot_run();
+        if (tg_responce != "start") {
+            //incorrect message handling;
+            std::cout << "unspecified message"<<std::endl;
+            return;
+        }
+        std::cout << tg_responce;
+        RobotTest kos_bot(Data::cam);
+        kos_bot.do_clean();
+    }
+    catch(std::exception e){
+        std::cout << e.what();
+    }
+}
+
 int main() {
-    std::string topic = "test/t1";
-    std::string host = "localhost";
-    int port = 1883;
-
-    //RobotTest a("E:\\Clion Projects\\DeliveryBot\\video_test_example\\rotate.mp4");
-    //OrderQueue::add(1);
-    //a.run();
-    //tg_bot_run();
-    try {
-        MPublisher Publisher(host, port);
-        Publisher.publish(topic, "Hell");
-        for (int i = 0; i < 5; i++)
-            Publisher.publish(topic, std::to_string(i));
-    }
-    catch (std::exception e){
-        std::cout << e.what();
-    }
-
+    controller_start();
     /*
-    OrderQueue::add(10);
-    RobotTest delbot("E:\\Clion Projects\\DeliveryBot\\video_test_example\\destin.mp4");
-    try {
-        delbot.run();
-    }
-    catch(std::runtime_error e){
-        std::cout << e.what();
-    }
+     important info about host, port, topic, cam are in Data.h
      */
 }

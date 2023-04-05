@@ -20,7 +20,7 @@ struct IRobot{
 struct RobotTest: public IRobot{
     cv::VideoCapture cap;
 
-    RobotTest(const char *);
+    RobotTest(const std::string&);
     RobotTest(int);
     cv::Mat get_frame();
 
