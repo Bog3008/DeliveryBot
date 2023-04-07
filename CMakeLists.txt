@@ -44,7 +44,7 @@ add_executable(DeliveryBotBinary
 target_include_directories(DeliveryBotBinary PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_link_libraries(DeliveryBotBinary
         ${OpenCV_LIBS}
-        /home/bogdan/.clion-vcpkg/vcpkg/packages/tgbot-cpp_x64-linux/debug/lib/libTgBot.a
+        /vcpkg/packages/tgbot-cpp_x64-linux/debug/lib/libTgBot.a
         PkgConfig::Mosquitto
         ${CMAKE_THREAD_LIBS_INIT}
         ${OPENSSL_LIBRARIES}
