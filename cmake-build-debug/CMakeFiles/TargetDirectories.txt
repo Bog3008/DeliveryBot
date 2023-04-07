@@ -1,3 +1,0 @@
-E:/Clion Projects/DeliveryBot/cmake-build-debug/CMakeFiles/DeliveryBotBinary.dir
-E:/Clion Projects/DeliveryBot/cmake-build-debug/CMakeFiles/edit_cache.dir
-E:/Clion Projects/DeliveryBot/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,2 +1,0 @@
-E:/Clion Projects/DeliveryBot/CMakeFiles/CMakeScratch/TryCompile-ozmngw/CMakeFiles/cmTC_4ab3e.dir
-E:/Clion Projects/DeliveryBot/CMakeFiles/CMakeScratch/TryCompile-ozmngw/CMakeFiles/ALL_BUILD.dir
