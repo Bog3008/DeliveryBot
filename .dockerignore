@@ -1,0 +1,8 @@
+cmake-build-debug
+README.md
+.idea
+CMakeFiles
+mosquitto
+video_test_example
+vcpkg.json
+UML Diagrams
