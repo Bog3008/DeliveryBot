@@ -41,7 +41,6 @@ void MPublisher::publish(const std::string & topic, const std::string & message)
 
     int return_code = mosquitto_publish(mosq, NULL, topic.c_str(), message.size()+1, message.c_str(), 0, false);
     //mosquitto_loop(mosq, 1000, 1) ;
-    _sleep(1);
 
     if(return_code != MOSQ_ERR_SUCCESS) {
         std::string error_message = "Publisher could not send a message: ";
