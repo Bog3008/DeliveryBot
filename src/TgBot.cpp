@@ -7,7 +7,7 @@
 std::string tg_bot_run(){
     std::string return_message;
 
-    std::string token("5868645498:AAGhAYq2ApK7ghZipHZqiKyRVEBRY0L0r5o");
+    std::string token("TOCKEN HERE");
     printf("Token: %s\n", token.c_str());
 
     Bot bot(token);
