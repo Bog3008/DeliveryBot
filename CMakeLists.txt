@@ -40,11 +40,8 @@ add_executable(DeliveryBotBinary
 target_include_directories(DeliveryBotBinary PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_link_libraries(DeliveryBotBinary
         ${OpenCV_LIBS}
-        #${CMAKE_CURRENT_SOURCE_DIR}/mosquitto/build/lib/Debug/mosquitto.lib
-        C:/Users/Bogdan/.clion-vcpkg/vcpkg/packages/mosquitto_x64-windows/lib/mosquitto.lib
-        C:/Users/Bogdan/.clion-vcpkg/vcpkg/packages/tgbot-cpp_x64-windows/debug/lib/TgBot.lib
-        #${mosquitto}
-        #${mosquitto_C_LIB}
+        ${mosquitto}
+        ${mosquitto_C_LIB}
         ${CMAKE_THREAD_LIBS_INIT}
         ${OPENSSL_LIBRARIES}
         ${Boost_LIBRARIES}
