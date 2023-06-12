@@ -40,6 +40,7 @@ add_executable(DeliveryBotBinary
 target_include_directories(DeliveryBotBinary PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_link_libraries(DeliveryBotBinary
         ${OpenCV_LIBS}
+        /vcpkg/packages/tgbot-cpp_x64-linux/debug/lib/libTgBot.a
         ${mosquitto}
         ${mosquitto_C_LIB}
         ${CMAKE_THREAD_LIBS_INIT}
