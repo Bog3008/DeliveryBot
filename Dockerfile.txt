@@ -1,0 +1,45 @@
+ FROM ubuntu
+RUN apt update && \
+    apt-get install -y gcc make cmake wget clang pkg-config git curl zip unzip tar mosquitto libmosquitto-dev \
+                   libssl-dev libboost-all-dev libssl-dev libcurl4-openssl-dev
+
+RUN git clone https://github.com/Microsoft/vcpkg.git && \
+    ./vcpkg/bootstrap-vcpkg.sh && \
+    cd /vcpkg/ && \
+    ./vcpkg install mosquitto tgbot-cpp boost
+
+RUN git clone https://github.com/opencv/opencv.git && \
+    mkdir -p build && cd build && \
+    cmake ../opencv && \
+    make -j4 && \
+    make install
+
+#COPY DeliveryBot /
+
+#RUN  while :; do cd /app && ls; sleep 1; done
+
+#RUN cd /vcpkg/ && \
+#        ./vcpkg install boost
+
+
+RUN mkdir /app
+
+#RUN apt-get -y install libsdl-image1.2-dev
+
+#RUN apt-get install -y gdb
+#RUN apt-get install -y valgrind
+#RUN cd /vcpkg/ && ./vcpkg upgrade
+
+COPY DeliveryBot/ /app
+
+#RUN while :; do cd /home/bogdan/vcpkg/packages/tgbot-cpp_x64-linux/include/ && ls && sleep 5; sleep 1; done
+RUN apt-get install -y build-essential manpages-dev
+RUN cd /app/ && mkdir build && cd /app/build && \
+    cmake .. -DCMAKE_BUILD_TYPE=Debug && \
+    cmake --build .
+#RUN cd /vcpkg/packages/tgbot-cpp_x64-linux/ && ls && sleep 10
+
+#ENTRYPOINT bash
+
+#RUN
+#RUN cd /app/build/ && ./DeliveryBotBinary
